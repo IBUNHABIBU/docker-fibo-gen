@@ -3,16 +3,15 @@ service: writehub
 
 # Name of the container image.
 image: ibunhabibu/writehub
-
 # Deploy to these servers.
 servers:
   web:
     hosts:
-      - 45.92.9.7
+      - 139.162.238.85
     labels:
-      traefik.http.routers.mynewapp.rule: Host(`writehub.cyou`)
+      traefik.http.routers.mynewapp.rule: Host(`habibtech.online`)
       traefik.http.routers.mynewapp.entrypoints: websecure
-      traefik.http.routers.mynewapp_secure.rule: Host(`writehub.cyou`)
+      traefik.http.routers.mynewapp_secure.rule: Host(`habibtech.online`)
       traefik.http.routers.mynewapp_secure.tls: true
       traefik.http.routers.mynewapp_secure.tls.certresolver: letsencrypt
     options:
@@ -52,10 +51,10 @@ ssh:
 accessories:
   db:
     image: postgres:16.0
-    host: 45.92.9.7
+    host: 139.162.238.85
     env:
       clear:
-        POSTGRES_USER: - POSTGRES_USER
+        POSTGRES_USER: POSTGRES_USER
         POSTGRES_DB: 'writehub_production'
       secret:
         - POSTGRES_PASSWORD
