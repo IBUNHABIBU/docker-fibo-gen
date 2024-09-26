@@ -34,6 +34,7 @@ env:
     RAILS_SERVE_STATIC_FILES: true
   secret:
     - RAILS_MASTER_KEY
+    - SECRET_KEY_BASE
     # - DB_HOST
     - POSTGRES_USER
     - POSTGRES_PASSWORD
