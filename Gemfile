@@ -70,3 +70,5 @@ group :test do
 end
 
 gem "kamal", "~> 1.8"
+
+gem 'net-protocol', '>= 0'
