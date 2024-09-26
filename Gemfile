@@ -73,3 +73,4 @@ gem "kamal", "~> 1.8"
 
 
 gem "net-pop", github: "ruby/net-pop"
+gem 'rubyzip', '~> 2.3.0'
