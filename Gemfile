@@ -71,4 +71,5 @@ end
 
 gem "kamal", "~> 1.8"
 
-gem 'net-protocol', '>= 0'
+
+gem "net-pop", github: "ruby/net-pop"
