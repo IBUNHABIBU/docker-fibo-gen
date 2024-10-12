@@ -1,8 +1,8 @@
 # Name of your application. Used to uniquely configure containers.
-service: linodeblog
+service: writehub
 
 # Name of the container image.
-image: ibunhabibu/linodeblog
+image: ibunhabibu/writehub
 
 # Deploy to these servers.
 servers:
@@ -66,8 +66,8 @@ accessories:
         - POSTGRES_PASWD
     files:
       - config/init.sql:/docker-entrypoint-initdb.d/setup.sql
-    directories:
-      - data:/var/lib/mysql
+    # directories:
+    #   - data:/var/lib/mysql
 #   redis:
 #     image: redis:7.0
 #     host: 192.168.0.2
