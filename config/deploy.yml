@@ -26,7 +26,7 @@ registry:
   username: ibunhabibu
 
   # Always use an access token rather than a real password (pulled from .kamal/secrets).
-  password: 
+  password:
           - KAMAL_REGISTRY_PASSWORD
 
 # Configure builder setup.
