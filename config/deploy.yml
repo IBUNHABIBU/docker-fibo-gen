@@ -103,6 +103,7 @@ accessories:
         POSTGRES_USER: 'postgres'
         POSTGRES_DB: 'writehub_production'
       secret:
+        - POSTGRES_USER
         - POSTGRES_PASSWORD
     files:
       - config/init.sql:/docker-entrypoint-initdb.d/setup.sql
