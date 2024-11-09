@@ -80,7 +80,7 @@ env:
     DB_HOST: 139.162.238.85
   secret:
     - RAILS_MASTER_KEY
-    - POSTGRES_PSWD
+    - POSTGRES_PASSWORD
 
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
 # "bin/kamal logs -r job" will tail logs from the first server in the job section.
@@ -102,7 +102,7 @@ accessories:
         POSTGRES_USER: 'postgres'
         POSTGRES_DB: 'writehub_production'
       secret:
-        - POSTGRES_PSWD
+        - POSTGRES_PASSWORD
     files:
       - config/init.sql:/docker-entrypoint-initdb.d/setup.sql
 # accessories:
