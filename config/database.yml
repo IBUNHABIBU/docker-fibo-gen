@@ -85,4 +85,4 @@ production:
   <<: *default
   database: writehub_production
   username: postgres
-  password: <%= ENV["POSTGRES_PSWD"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
