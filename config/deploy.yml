@@ -80,6 +80,7 @@ env:
     DB_HOST: 139.162.238.85
   secret:
     - RAILS_MASTER_KEY
+    - POSTGRES_USER
     - POSTGRES_PASSWORD
 
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
