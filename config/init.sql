@@ -1,4 +1,1 @@
 CREATE DATABASE writehub_production;
-CREATE DATABASE writehub_production_queue;
-CREATE DATABASE writehub_production_cache;
-CREATE DATABASE writehub_production_cable;
