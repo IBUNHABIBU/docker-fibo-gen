@@ -7,7 +7,7 @@ image: ibunhabibu/writehub
 # Deploy to these servers.
 servers:
   web:
-    - 139.162.238.85
+    - 45.92.9.7
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -77,7 +77,7 @@ builder:
 # into containers (secrets come from .kamal/secrets).
 env:
   clear:
-    DB_HOST: 139.162.238.85
+    DB_HOST: 45.92.9.7
   secret:
     - RAILS_MASTER_KEY
     - POSTGRES_USER
@@ -96,7 +96,7 @@ ssh:
 accessories:
   db:
     image: postgres:15
-    host: 139.162.238.85
+    host: 45.92.9.7
     port: 5432  # Ensure this is the correct port or change it to 5432 if needed
     env:
       clear:
