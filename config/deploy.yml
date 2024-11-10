@@ -2,7 +2,7 @@
 service: contaborails
 
 # Name of the container image.
-image: ibunhabibu/writehub
+image: ibunhabibu/contaborails
 
 # Deploy to these servers.
 servers:
