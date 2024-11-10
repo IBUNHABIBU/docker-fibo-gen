@@ -1,1 +1,1 @@
-CREATE DATABASE writehub_production;
+-- CREATE DATABASE writehub_production;
