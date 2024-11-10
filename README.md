@@ -93,7 +93,7 @@ proxy:
   ssl: true
   host: habibtech.online
   # Proxy connects to your container on port 80 by default.
-  app_port: 3000
+  # app_port: 3000
 
 # Credentials for your image host.
 registry:
