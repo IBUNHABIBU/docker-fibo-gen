@@ -86,3 +86,5 @@ production:
   database: writehub_production
   username: postgres
   password: <%= ENV["POSTGRES_PASSWORD"] %>
+  port: 5433
+  host: <%= ENV["DB_HOST"] %>
