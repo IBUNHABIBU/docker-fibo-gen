@@ -87,4 +87,4 @@ production:
   username: postgres
   password: <%= ENV["POSTGRES_PASSWORD"] %>
   port: 5433
-  host: <%= ENV["DB_HOST"] %>
+  host: 45.92.9.7
