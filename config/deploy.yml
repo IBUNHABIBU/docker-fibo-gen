@@ -27,7 +27,7 @@ builder:
 
 env:
   clear:
-    DB_HOST: 139.162.238.85
+    DB_HOST: contaborails-postgres
   secret:
     - RAILS_MASTER_KEY
     - POSTGRES_USER
@@ -41,7 +41,7 @@ accessories:
   db:
     image: postgres:15
     host: 139.162.238.85
-    port: 127.0.0.1:5433:5433  # Ensure this is the correct port or change it to 5432 if needed
+    port: "127.0.0.1:5433:5433"  # Ensure this is the correct port or change it to 5432 if needed
     env:
       clear:
         POSTGRES_USER: 'postgres'
