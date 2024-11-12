@@ -27,7 +27,7 @@ builder:
 
 env:
   clear:
-    DB_HOST: contaborails-db
+    DB_HOST: contaborails-postgres
   secret:
     - RAILS_MASTER_KEY
     - POSTGRES_USER
