@@ -1,8 +1,8 @@
 # Name of your application. Used to uniquely configure containers.
-service: contaborails
+service: linodekamal
 
 # Name of the container image.
-image: ibunhabibu/contaborails
+image: ibunhabibu/linodekamal
 
 # Deploy to these servers.
 servers:
@@ -27,7 +27,7 @@ builder:
 
 env:
   clear:
-    DB_HOST: contaborails-db
+    DB_HOST: linodekamal-db
   secret:
     - RAILS_MASTER_KEY
     - POSTGRES_USER
@@ -45,7 +45,7 @@ accessories:
     env:
       clear:
         POSTGRES_USER: 'postgres'
-        POSTGRES_DB: 'writehub_production'
+        POSTGRES_DB: 'linodekamal_production'
       secret:
         - POSTGRES_USER
         - POSTGRES_PASSWORD
