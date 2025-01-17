@@ -1,88 +1,69 @@
 # syntax = docker/dockerfile:1
 
-# Build arguments
+# This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
+# docker build -t my-app .
+# docker run -d -p 80:80 -p 443:443 --name my-app -e RAILS_MASTER_KEY=<value from config/master.key> my-app
+
+# Make sure RUBY_VERSION matches the Ruby version in .ruby-version
 ARG RUBY_VERSION=3.3.3
+FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 
-# Base image
-FROM ruby:$RUBY_VERSION-slim AS base
-
-# Set working directory
+# Rails app lives here
 WORKDIR /rails
 
-# Add sources and configure APT for HTTPS
-# Recreate /etc/apt/sources.list if missing
-RUN echo "deb https://deb.debian.org/debian bookworm main" > /etc/apt/sources.list && \
-    echo "deb https://deb.debian.org/debian bookworm-updates main" >> /etc/apt/sources.list && \
-    echo "deb https://security.debian.org/debian-security bookworm-security main" >> /etc/apt/sources.list
-
-# Update package sources and install dependencies
-RUN apt-get update -qq || (sleep 30 && apt-get update -qq) && \
-    apt-get install --no-install-recommends -y \
-    libjemalloc2 \
-    libvips \
-    postgresql-client && \
+# Install base packages
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y curl libjemalloc2 libvips postgresql-client && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
-
-# Set production environment variables
+# Set production environment
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
-    BUNDLE_WITHOUT="development test"
+    BUNDLE_WITHOUT="development"
 
-# Install runtime dependencies
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y libjemalloc2 libvips postgresql-client && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
-
-# Multi-stage build for gems and assets
+# Throw-away build stage to reduce size of final image
 FROM base AS build
 
-# Install build tools for native gems
+# Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends --fix-missing -y \
-    build-essential \
-    git \
-    libpq-dev \
-    pkg-config && \
+    apt-get install --no-install-recommends -y build-essential git libpq-dev pkg-config && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
-# Copy Gemfile and install gems
+# Install application gems
 COPY Gemfile Gemfile.lock ./
-RUN bundle install --jobs 4 --retry 3 && \
-    rm -rf "${BUNDLE_PATH}/ruby/*/cache" "${BUNDLE_PATH}/ruby/*/bundler/gems/*/.git"
+RUN bundle install && \
+    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
+    bundle exec bootsnap precompile --gemfile
 
 # Copy application code
 COPY . .
 
-# Set executable permissions for bin/rails and other bin/* scripts
-RUN chmod +x bin/*
+# Precompile bootsnap code for faster boot times
+RUN bundle exec bootsnap precompile app/ lib/
 
-# Precompile assets
-RUN SECRET_KEY_BASE=dummy_key ./bin/rails assets:precompile
+# Precompiling assets for production without requiring secret RAILS_MASTER_KEY
+RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
-COPY bin/docker-entrypoint /rails/bin/docker-entrypoint
-RUN chmod +x /rails/bin/docker-entrypoint
 
-# Precompile assets
-RUN SECRET_KEY_BASE=dummy_key ./bin/rails assets:precompile
 
-# Final production image
+
+# Final stage for app image
 FROM base
 
-# Copy dependencies and application code
+# Copy built artifacts: gems, application
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
 COPY --from=build /rails /rails
 
-# Create non-root user
-RUN groupadd --system --gid 999 rails && \
-    useradd --system --uid 999 --gid 999 --create-home --shell /bin/bash rails && \
-    mkdir -p /rails/db /rails/log /rails/storage /rails/tmp && \
-    chown -R rails:rails /rails db log storage tmp
+# Run and own only the runtime files as a non-root user for security
+RUN groupadd --system --gid 1000 rails && \
+    useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
+    chown -R rails:rails db log storage tmp
+USER 1000:1000
 
-USER rails
-
-# Entrypoint and Rails server command
+# Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
+
+# Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD ["./bin/rails", "server", "-b", "0.0.0.0"]
+CMD ["./bin/rails", "server"]
