@@ -7,7 +7,7 @@ image: ibunhabibu/linodekamal
 # Deploy to these servers.
 servers:
   web:
-    - 139.162.238.85
+    - 45.92.9.7
 
 proxy: 
   ssl: true
@@ -40,7 +40,7 @@ ssh:
 accessories:
   db:
     image: postgres:15
-    host: 139.162.238.85
+    host: 45.92.9.7
     port: "127.0.0.1:5433:5433"  # Ensure this is the correct port or change it to 5432 if needed
     env:
       clear:
