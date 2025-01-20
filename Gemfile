@@ -58,4 +58,4 @@ end
 
 gem "kamal", "~> 2.3"
 
-gem "thruster", "~> 0.1.8"
+gem "thruster", "~> 0.1.10"
