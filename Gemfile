@@ -56,6 +56,6 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "kamal", "~> 2.3"
+gem "kamal", "~> 2.5"
 
 gem "thruster", "~> 0.1.8"
