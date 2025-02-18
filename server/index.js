@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // postgres client setup
-const { Pool } = 
+const { Pool } = require('pg')
 
 
 
