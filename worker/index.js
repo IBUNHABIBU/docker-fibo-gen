@@ -15,6 +15,6 @@ function fib(index) {
     return fib(index-1) + fib(index-2)
 }
 
-sub.on('message', (channel, message)) = {
+sub.on('message', (channel, message) => {
 
-}
+});
