@@ -20,5 +20,8 @@ const pgClient = new Pool({
     port: keys.pgPort
 })
 
+pgClient.on('error', () => {
+    
+})
 
 
