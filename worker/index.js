@@ -16,5 +16,5 @@ function fib(index) {
 }
 
 sub.on('message', (channel, message) => {
-
+    
 });
