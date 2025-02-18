@@ -12,7 +12,9 @@ app.use(bodyParser.json());
 
 // postgres client setup
 const { Pool } = require('pg');
-
+const pgClient = new Pool({
+    
+})
 
 
 
