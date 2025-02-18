@@ -4,7 +4,8 @@
         "redis": "2.8.0",
         "express": "4.21.2",
         "pg": "8.13.3",
-        "cors": "2.8.5"
+        "cors": "2.8.5",
+        "body-parser":"*"
     },
     "scripts": {
         "start": "node index.js",
