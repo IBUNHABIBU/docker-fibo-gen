@@ -40,13 +40,14 @@ const redisClient = redis.createClient({
 const redisPublisher = redisClient.duplicate();
 
 // express routes
-app.get('/', async (req, res) => res.send('Hi'));
-app.get('/values/all', (req, res) => {
+app.get('/',  (req, res) => res.send('Hi'));
+
+app.get('/values/all', async (req, res) => {
     const values = await pgClient.query('SELECT * from values');
     res.send(values.rows);
 });
 
-app.get('/values/current', (req, res) => {
+app.get('/values/current', async (req, res) => {
     const values = await pgClient.query('SELECT * from values');
     res.send(values.rows);
 });
