@@ -43,4 +43,5 @@ const redisPublisher = redisClient.duplicate();
 app.get('/', async (req, res) => res.send('Hi'));
 app.get('/values/all', (req, res) => {
     const values = await pgClient.query('SELECT * from values');
-})
+    res.send(values.rows);
+});
