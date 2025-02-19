@@ -45,3 +45,8 @@ app.get('/values/all', (req, res) => {
     const values = await pgClient.query('SELECT * from values');
     res.send(values.rows);
 });
+
+app.get('/values/current', (req, res) => {
+    const values = await pgClient.query('SELECT * from values');
+    res.send(values.rows);
+});
