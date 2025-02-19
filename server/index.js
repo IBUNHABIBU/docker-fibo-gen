@@ -52,3 +52,4 @@ app.get('/values/current', async (req, res) => {
         res.send(values);
     })
 });
+
