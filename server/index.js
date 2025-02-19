@@ -31,6 +31,8 @@ pgClient
 // redis client setup
 const redis = require('redis');
 
-const redisClient = 
+const redisClient = redis.createClient({
+    
+})
 
 
