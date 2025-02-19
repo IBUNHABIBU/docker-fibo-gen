@@ -24,7 +24,8 @@ pgClient.on('error', () => {
     console.log('lost pg connection');
 })
 
-pgClient.query('CREATE  TABLE IF NOT EXIST values (number INT)')
+pgClient
+.query('CREATE  TABLE IF NOT EXIST values (number INT)')
         .catch((err) => console.log(err));
 
 
