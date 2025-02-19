@@ -58,4 +58,6 @@ app.post('/values', async (req, res) => {
     if(parseInt(index) > 40) {
         return res.status(422).send("Index too high");
     }
+
+    redisClient.hset('values', index, 'Nothing yet');
 })
