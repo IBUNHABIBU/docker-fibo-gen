@@ -28,4 +28,7 @@ pgClient
         .query('CREATE  TABLE IF NOT EXIST values (number INT)')
         .catch((err) => console.log(err));
 
+// redis client setup
+const redis = require('redis');
+
 
