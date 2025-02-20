@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 export default () => {
   return (
-    <div>OtherPage</div>
+    <div>OtherPage
+      
+    </div>
   )
 }
