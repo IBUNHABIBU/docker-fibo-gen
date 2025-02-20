@@ -1,10 +1,8 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
-
-const OtherPage = () => {
+export default () => {
   return (
     <div>OtherPage</div>
   )
 }
-
-export default OtherPage
