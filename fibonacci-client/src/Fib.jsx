@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
-export default class Fib extends Component {
-  static propTypes = {second: third}
+export class Fib extends Component {
+  static propTypes = {}
 
   render() {
     return (
@@ -10,3 +10,5 @@ export default class Fib extends Component {
     )
   }
 }
+
+export default Fib
