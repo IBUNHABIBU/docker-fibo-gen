@@ -9,6 +9,10 @@ export default class Fib extends Component {
     index: ''
   }
 
+  componentDidMount() {
+    
+  }
+
   render() {
     return (
       <div>Fib</div>
