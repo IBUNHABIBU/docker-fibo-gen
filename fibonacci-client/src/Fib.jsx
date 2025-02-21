@@ -2,8 +2,9 @@ import React from 'react'
 
 const Fib = () => {
   return (
-    <div>Fib
-      
+    <div>
+      Fib
+
     </div>
   )
 }
