@@ -22,7 +22,7 @@ export default class Fib extends Component {
   }
 
   async fetchIndexes() {
-    const seenIndexes = await axios.get('api/values/all')
+    const seenIndexes = await axios.get('api/values/all');
   }
 
   render() {
