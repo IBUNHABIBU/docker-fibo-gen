@@ -10,7 +10,7 @@ export default class Fib extends Component {
   }
 
   componentDidMount() {
-    
+    this.fetchValues();;
   }
 
   render() {
