@@ -15,7 +15,7 @@ export default class Fib extends Component {
   }
 
   async fetchValues(){
-    
+    const values = await axios.get()
   }
 
   render() {
