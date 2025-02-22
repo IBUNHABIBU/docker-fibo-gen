@@ -14,6 +14,10 @@ export default class Fib extends Component {
     this.fetchIndexes();
   }
 
+  async fetchValues(){
+    
+  }
+
   render() {
     return (
       <div>Fib</div>
