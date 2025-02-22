@@ -21,6 +21,8 @@ export default class Fib extends Component {
     })
   }
 
+  async fetchIndexes()
+
   render() {
     return (
       <div>Fib</div>
