@@ -21,7 +21,9 @@ export default class Fib extends Component {
     })
   }
 
-  async fetchIndexes()
+  async fetchIndexes() {
+    const seenIndexes = await axios.get('api/values/all')
+  }
 
   render() {
     return (
