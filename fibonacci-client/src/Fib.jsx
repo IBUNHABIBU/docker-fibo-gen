@@ -54,6 +54,7 @@ export default class Fib extends Component {
           <label htmlFor="">Inter your index: </label>
           <input type="text"
             value={this.state.index}
+            onChange={}
           />
           <button>Submit</button>
         </form>
