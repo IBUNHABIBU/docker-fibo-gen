@@ -37,7 +37,8 @@ export default class Fib extends Component {
           <button>Submit</button>
         </form>
         <h3>Indexes I have seen</h3>
-        <h3></h3>
+        {this.renderSeenIndexes}
+        <h3>Calculated values</h3>
       </div>
     )
   }
