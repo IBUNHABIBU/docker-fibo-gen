@@ -34,7 +34,6 @@ export default class Fib extends Component {
         <form>
 
         </form>
-
       </div>
     )
   }
