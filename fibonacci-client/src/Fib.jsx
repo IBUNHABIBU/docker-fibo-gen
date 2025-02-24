@@ -54,7 +54,7 @@ export default class Fib extends Component {
           <label htmlFor="">Inter your index: </label>
           <input type="text"
             value={this.state.index}
-            onChange={(event) => }
+            onChange={(event) => this.setState({ index: event.target.value })}
           />
           <button>Submit</button>
         </form>
