@@ -28,6 +28,10 @@ export default class Fib extends Component {
     })
   }
 
+  renderSeenIndexes(){
+    
+  }
+
   render() {
     return (
       <div>
