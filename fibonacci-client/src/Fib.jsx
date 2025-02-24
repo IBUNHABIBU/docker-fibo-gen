@@ -47,8 +47,11 @@ export default class Fib extends Component {
     return entries;
   }
 
-  handleSubmit = async () => {
-    
+  handleSubmit = async (event) => {
+    event.preventDefault();
+    await axios.post('/api/values', {
+      
+    })
   }
 
   render() {
