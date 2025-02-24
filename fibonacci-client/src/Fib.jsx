@@ -34,6 +34,7 @@ export default class Fib extends Component {
         <form>
           <label htmlFor="">Inter your index: </label>
           <input type="text" />
+          <button>Submit</button>
         </form>
       </div>
     )
