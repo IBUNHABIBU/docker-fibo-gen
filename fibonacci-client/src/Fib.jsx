@@ -36,6 +36,10 @@ export default class Fib extends Component {
 
   renderValues() {
     const entries = [];
+    
+    for(let key in this.state.values) {
+      
+    }
   }
 
   render() {
