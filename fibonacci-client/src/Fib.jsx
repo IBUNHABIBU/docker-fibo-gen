@@ -39,7 +39,9 @@ export default class Fib extends Component {
     
     for(let key in this.state.values) {
       entries.push(
-        <div key={key}></div>
+        <div key={key}>
+          for index {key}
+        </div>
       )
     }
   }
