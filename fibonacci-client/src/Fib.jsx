@@ -32,7 +32,7 @@ export default class Fib extends Component {
     return (
       <div>
         <form>
-
+          <label htmlFor="">Inter your index: </label>
         </form>
       </div>
     )
