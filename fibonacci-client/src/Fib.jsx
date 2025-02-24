@@ -35,7 +35,7 @@ export default class Fib extends Component {
   }
 
   renderValues() {
-    
+    const entries = [];
   }
 
   render() {
