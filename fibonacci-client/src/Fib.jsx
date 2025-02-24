@@ -47,10 +47,14 @@ export default class Fib extends Component {
     return entries;
   }
 
+  handleSubmit = async () => {
+    
+  }
+
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label htmlFor="">Inter your index: </label>
           <input type="text"
             value={this.state.index}
