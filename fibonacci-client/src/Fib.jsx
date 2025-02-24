@@ -36,6 +36,7 @@ export default class Fib extends Component {
           <input type="text" />
           <button>Submit</button>
         </form>
+        <h3>Indexes I have seen</h3>
       </div>
     )
   }
