@@ -30,7 +30,12 @@ export default class Fib extends Component {
 
   render() {
     return (
-      <div>Fib</div>
+      <div>
+        <form>
+
+        </form>
+
+      </div>
     )
   }
 }
