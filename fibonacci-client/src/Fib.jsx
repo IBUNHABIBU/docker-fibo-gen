@@ -52,7 +52,9 @@ export default class Fib extends Component {
       <div>
         <form>
           <label htmlFor="">Inter your index: </label>
-          <input type="text" />
+          <input type="text"
+            value={this.state.index}
+          />
           <button>Submit</button>
         </form>
         <h3>Indexes I have seen</h3>
