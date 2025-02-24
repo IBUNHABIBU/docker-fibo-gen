@@ -45,6 +45,7 @@ export default class Fib extends Component {
         <h3>Indexes I have seen</h3>
         {this.renderSeenIndexes}
         <h3>Calculated values</h3>
+        {this.renderValues}
       </div>
     )
   }
