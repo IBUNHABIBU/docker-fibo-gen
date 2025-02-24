@@ -29,7 +29,7 @@ export default class Fib extends Component {
   }
 
   renderSeenIndexes(){
-    
+    return this.state.seenIndexes.map()
   }
 
   render() {
