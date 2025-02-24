@@ -34,7 +34,9 @@ export default class Fib extends Component {
     })
   }
 
-  
+  renderValues() {
+    
+  }
 
   render() {
     return (
