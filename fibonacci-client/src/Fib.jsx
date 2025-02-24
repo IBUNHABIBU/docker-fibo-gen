@@ -40,7 +40,7 @@ export default class Fib extends Component {
     for(let key in this.state.values) {
       entries.push(
         <div key={key}>
-          for index {key}
+          for index {key} I calculated {this.state.values[key]}
         </div>
       )
     }
