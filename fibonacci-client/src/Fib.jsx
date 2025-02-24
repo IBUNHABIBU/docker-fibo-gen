@@ -38,9 +38,7 @@ export default class Fib extends Component {
     const entries = [];
     
     for(let key in this.state.values) {
-      entries.push({
-        
-      })
+      entries.push()
     }
   }
 
