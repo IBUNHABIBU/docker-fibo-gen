@@ -1,5 +1,10 @@
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
+
+const Fib = () => {
+
+}
 
 export default class Fib extends Component {
  
