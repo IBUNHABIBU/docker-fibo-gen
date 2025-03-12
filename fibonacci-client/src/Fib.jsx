@@ -1,7 +1,4 @@
 import PropTypes from 'prop-types'
-import  from 'react';
-
-
 const Fib = () => {
 
 }
