@@ -11,6 +11,8 @@ const Fib = () => {
   )
 }
 
+export default Fib;
+
 // export default class Fib extends Component {
  
 //   state = {
