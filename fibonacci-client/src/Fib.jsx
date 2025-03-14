@@ -5,6 +5,12 @@ const Fib = () => {
   [values, setValues] = useState();
   [index, setIndex] = useState('');
 
+  useEffect(
+    () => {
+      
+    }
+  )
+
 
   return (
     <> 
