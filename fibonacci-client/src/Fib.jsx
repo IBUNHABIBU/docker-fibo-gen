@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 const Fib = () => {
-  [seenIndexes, setSeenIndexes] = useState();
+  [seenIndexes, setSeenIndexes] = useState([]);
   [values, setValues] = useState()
 
   return (
